@@ -1,3 +1,6 @@
 # RXKit
+使用RxSwift提供一套完整开发工具。
 
-A description of this package.
+## 依赖
+- RxSwift 响应式
+- SnapKit 布局
