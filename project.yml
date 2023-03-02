@@ -1,0 +1,20 @@
+name: Example
+options:
+  bundleIdPrefix: com.github.yaochenfeng
+packages:
+  RXKit:
+    path: ../RXKit
+targets:
+  Example:
+    platform: iOS
+    type: application
+    deploymentTarget: "11.0"
+    sources:
+      - Example
+    dependencies:
+      - package:   RXKit
+    settings:
+      base:
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 1.0.0
+        INFOPLIST_FILE: "Example/Assets/Info.plist"
