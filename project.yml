@@ -16,5 +16,6 @@ targets:
     settings:
       base:
         CURRENT_PROJECT_VERSION: 1
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
         MARKETING_VERSION: 1.0.0
-        INFOPLIST_FILE: "Example/Assets/Info.plist"
+        GENERATE_INFOPLIST_FILE: true
