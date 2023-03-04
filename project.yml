@@ -11,6 +11,16 @@ targets:
     deploymentTarget: "11.0"
     sources:
       - Example
+    postCompileScripts:
+      - name: Swiftlint
+        script: |
+                if which swiftlint > /dev/null; then
+                  swiftlint
+                else
+                  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+                fi
+        
+        
     dependencies:
       - package:   RXKit
     settings:
