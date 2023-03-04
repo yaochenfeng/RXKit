@@ -13,6 +13,7 @@ targets:
       - Example
     postCompileScripts:
       - name: Swiftlint
+        basedOnDependencyAnalysis: false
         script: |
                 if which swiftlint > /dev/null; then
                   swiftlint
