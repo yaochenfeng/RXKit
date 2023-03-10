@@ -1,6 +1,12 @@
 name: Example
 options:
   bundleIdPrefix: com.github.yaochenfeng
+  deploymentTarget: 
+    iOS: 14.0
+settings:
+  base:
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
 packages:
   RXKit:
     path: ../RXKit
@@ -8,7 +14,6 @@ targets:
   Example:
     platform: iOS
     type: application
-    deploymentTarget: "11.0"
     sources:
       - Example
     postCompileScripts:
@@ -21,12 +26,21 @@ targets:
                   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
                 fi
         
-        
     dependencies:
       - package:   RXKit
     settings:
       base:
-        CURRENT_PROJECT_VERSION: 1
-        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
-        MARKETING_VERSION: 1.0.0
-        GENERATE_INFOPLIST_FILE: true
+        ENABLE_PREVIEWS: YES
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        DEVELOPMENT_ASSET_PATHS: "\"Example/Assets/Preview Content\""
+
+
+
+    # settings:
+    #   base:
+    #     CURRENT_PROJECT_VERSION: 1
+    #     INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
+    #     MARKETING_VERSION: 1.0.0
+    #     GENERATE_INFOPLIST_FILE: true

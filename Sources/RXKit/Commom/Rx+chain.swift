@@ -18,7 +18,7 @@ public extension Reactive where Base: AnyObject {
         try block(base)
         return self
     }
-    /// 同步调用
+    /// 同步锁调用
     @discardableResult func synchronizedBag<T>( _ action: () -> T) -> T {
         objc_sync_enter(self.base)
         let result = action()

@@ -7,6 +7,7 @@
 
 #if os(iOS) || os(macOS)
 import WebKit
-
-
+public extension Reactive where Base: WKWebView {
+    
+}
 #endif
