@@ -7,10 +7,6 @@
 
 import UIKit
 
-public protocol RXUIView {
-    
-}
-
 #if canImport(SwiftUI)
 import SwiftUI
 

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+@_exported import RXKit
 @main
 struct ExampleApp: App {
     var body: some Scene {

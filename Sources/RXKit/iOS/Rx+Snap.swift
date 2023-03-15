@@ -13,10 +13,6 @@ public extension Reactive where Base: ConstraintView {
     var snp: ConstraintViewDSL {
         return base.snp
     }
-    /// 创建对象链式操作
-    static var new: Reactive<Base> {
-        return Base().rx
-    }
     
     /// 添加到父视图
     /// - Parameter sp: 父视图
