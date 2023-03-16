@@ -40,6 +40,15 @@ public extension Reactive where Base: UIView {
         return self
     }
 }
+public extension Reactive where Base: UILabel {
+    /// 创建对象链式操作,Hugging 默认251
+    static var new: Reactive<Base> {
+        return Base(frame: .zero).rx.chain { base in
+            base.setContentHuggingPriority(.init(251), for: .horizontal)
+            base.setContentHuggingPriority(.init(251), for: .vertical)
+        }
+    }
+}
 public extension Reactive where Base: UICollectionView {
     /// 创建对象链式操作
     static var new: Reactive<Base> {
@@ -60,5 +69,4 @@ extension Reactive: View, UIViewRepresentable where Base: UIView {
     
     public typealias UIViewType = Base
 }
-
 #endif
