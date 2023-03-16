@@ -47,3 +47,18 @@ public extension Reactive where Base: UICollectionView {
     }
 }
 #endif
+
+#if canImport(SwiftUI)
+import SwiftUI
+@available(iOS 13.0, *)
+extension Reactive: View, UIViewRepresentable where Base: UIView {
+    public typealias Context = UIViewRepresentableContext<Self>
+    public func makeUIView(context: Context) -> Base {
+        return base
+    }
+    public func updateUIView(_ uiView: Base, context: Context) {}
+    
+    public typealias UIViewType = Base
+}
+
+#endif
