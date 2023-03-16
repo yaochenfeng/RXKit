@@ -16,7 +16,6 @@ public protocol RXViewConvertible {
     func asView() -> UIView
 }
 
-
 extension UIView: RXViewConvertible {
     public func asView() -> UIView {
         return self
