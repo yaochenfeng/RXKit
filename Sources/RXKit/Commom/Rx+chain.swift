@@ -20,7 +20,6 @@ public extension Reactive where Base: AnyObject {
         try block(base)
         return self
     }
-    
     /// 链式设置
     /// - Parameters:
     ///   - keyPath: 属性
@@ -31,6 +30,14 @@ public extension Reactive where Base: AnyObject {
         var subject = self.base
         subject[keyPath: keyPath] = value
         return self
+    }
+}
+
+#if canImport(ObjectiveC)
+public extension Reactive where Base: NSObject {
+    /// 创建对象链式操作
+    static var new: Reactive<Base> {
+        return Base().rx
     }
     /// 同步锁调用
     /// - Parameter action: 方法
@@ -54,10 +61,4 @@ public extension Reactive where Base: AnyObject {
         }
     }
 }
-
-public extension Reactive where Base: NSObject {
-    /// 创建对象链式操作
-    static var new: Reactive<Base> {
-        return Base().rx
-    }
-}
+#endif

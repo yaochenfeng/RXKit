@@ -1,9 +1,10 @@
 //
-//  RXUIView.swift
+//  RXView.swift
 //  
 //
 //  Created by yaochenfeng on 2023/3/10.
 //
+
 #if canImport(UIKit)
 import UIKit
 
@@ -14,6 +15,7 @@ public protocol RXViewConvertible {
     /// - Returns: UIView
     func asView() -> UIView
 }
+
 
 extension UIView: RXViewConvertible {
     public func asView() -> UIView {
