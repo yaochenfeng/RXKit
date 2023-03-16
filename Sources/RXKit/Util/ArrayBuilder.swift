@@ -9,6 +9,7 @@ public struct ArrayBuilder<T> {
     public static func buildBlock(_ components: [T]...) -> [T] {
         return Array(components.joined())
     }
+    
     /// 数组构造
     public static func buildExpression(_ expression: T) -> [T] {
         return [expression]

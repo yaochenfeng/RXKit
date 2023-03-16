@@ -6,8 +6,12 @@
 //
 #if canImport(UIKit)
 import UIKit
-
+/// 通用UIView拓展
 public extension Reactive where Base: UIView {
+    /// 创建对象链式操作
+    static var new: Reactive<Base> {
+        return Base(frame: .zero).rx
+    }
     /// 根据视图找到对应的控制器
     var controller: UIViewController? {
         for view in sequence(first: base.superview, next: { $0?.superview }) {
@@ -26,6 +30,20 @@ public extension Reactive where Base: UIView {
         base.layer.cornerRadius = radius
         base.layer.masksToBounds = true
         return self
+    }
+    
+    /// 设置边框颜色
+    @discardableResult
+    func border(_ color: UIColor? = nil, width: CGFloat = 0.5) -> Self {
+        base.layer.borderWidth = width
+        base.layer.borderColor = color?.cgColor
+        return self
+    }
+}
+public extension Reactive where Base: UICollectionView {
+    /// 创建对象链式操作
+    static var new: Reactive<Base> {
+        return Base(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).rx
     }
 }
 #endif

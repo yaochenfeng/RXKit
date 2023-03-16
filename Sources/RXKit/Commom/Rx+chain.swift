@@ -26,6 +26,7 @@ public extension Reactive where Base: AnyObject {
     ///   - keyPath: 属性
     ///   - value: 值
     /// - Returns: Reactive
+    @discardableResult
     func set<Value>(by keyPath: WritableKeyPath<Base, Value>, _ value: Value) -> Reactive<Base> {
         var subject = self.base
         subject[keyPath: keyPath] = value
