@@ -13,7 +13,7 @@ public class RXStackView: UIStackView {
 
 public extension Reactive where Base: UIStackView {
     
-    /// 横向stackView 默认居中边距相等
+    /// 横向stackView 默认居中
     static func row(@ArrayBuilder<RXViewConvertible> builder: () -> [RXViewConvertible]) -> Reactive<Base> {
         return Base.rx.new.chain { base in
             let views = builder()
@@ -22,9 +22,8 @@ public extension Reactive where Base: UIStackView {
             }
         }.set(by: \.axis, .horizontal)
             .set(by: \.alignment, .center)
-            .set(by: \.distribution, .equalCentering)
     }
-    /// 垂直stackView
+    /// 垂直stackView  默认居中
     static func column(@ArrayBuilder<RXViewConvertible> builder: () -> [RXViewConvertible]) -> Reactive<Base> {
         return Base.rx.new.chain { base in
             let views = builder()
@@ -32,6 +31,17 @@ public extension Reactive where Base: UIStackView {
                 base.addArrangedSubview(view.asView())
             }
         }.set(by: \.axis, .vertical)
+            .set(by: \.alignment, .center)
+    }
+    
+    /// 设置自定义间距
+    @discardableResult
+    func setSpacing(_ spacing: CGFloat, after: Int) -> Reactive<Base> {
+        if after < base.arrangedSubviews.count {
+            let view = base.arrangedSubviews[after]
+            base.setCustomSpacing(spacing, after: view)
+        }
+        return self
     }
 }
 

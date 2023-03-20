@@ -10,17 +10,28 @@ import UIKit
 open class RXBoxView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
+        commomInit()
     }
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupUI()
+        commomInit()
     }
-    open func setupUI() {
+    open func commomInit() {
         translatesAutoresizingMaskIntoConstraints = false
     }
     public override class var requiresConstraintBasedLayout: Bool {
         return true
+    }
+    public var intrinsicSize: CGSize? {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+    open override var intrinsicContentSize: CGSize {
+        if let size = intrinsicSize {
+            return size
+        }
+        return super.intrinsicContentSize
     }
 }
 #endif
