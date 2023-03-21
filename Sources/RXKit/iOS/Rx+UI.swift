@@ -34,6 +34,14 @@ public extension Reactive where Base: UIImageView {
         }
     }
 }
+extension Reactive where Base: UIButton {
+    /// Reactive wrapper for `setTitle(_:for:)`
+    public func titleColor(for controlState: UIControl.State = []) -> Binder<UIColor?> {
+        Binder(self.base) { button, value in
+            button.setTitleColor(value, for: controlState)
+        }
+    }    
+}
 public extension Reactive where Base: UICollectionView {
     /// 创建对象链式操作
     static var new: Reactive<Base> {

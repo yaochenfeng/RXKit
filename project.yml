@@ -16,6 +16,15 @@ targets:
     type: application
     sources:
       - Example
+    preBuildScripts:
+      - name: Swiftlint
+        basedOnDependencyAnalysis: false
+        script: |
+                if which swiftgen > /dev/null; then
+                  swiftgen
+                else
+                  echo "warning: SwiftGen is not installed. brew install swiftgen"
+                fi
     postCompileScripts:
       - name: Swiftlint
         basedOnDependencyAnalysis: false
