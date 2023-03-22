@@ -20,11 +20,12 @@
  xcassets:
    inputs:
      - Assets.xcassets
-#     - ProFeatures.xcassets
+     - Colors.xcassets
    outputs:
      - templateName: swift5
        params:
          forceProvidesNamespaces: true
+         enumName: Assets # 枚举名称
        output: XCAssets.swift
 
 

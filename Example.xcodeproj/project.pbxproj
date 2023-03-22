@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		02AD75FAA211C341C6992163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0172AE78F5D928FB7C53209 /* Assets.xcassets */; };
+		18FBF8D9F43F848BF711A5D4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C19B765DEC12ADE7D53CAD59 /* Colors.xcassets */; };
 		2C5D2F5E51CBF100A77D2FFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA42305E000338ABD032963 /* ContentView.swift */; };
 		4F7C8C15AA76333B7C57B203 /* XCAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90AAF2CEEB9C4058E7D99A /* XCAssets.swift */; };
 		7C364D687E817080B6B96DC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E406B0A0BEA8C2026110BD41 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		5B90AAF2CEEB9C4058E7D99A /* XCAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCAssets.swift; sourceTree = "<group>"; };
 		A0172AE78F5D928FB7C53209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B185D57EF3965CD22DF72BAE /* RXKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RXKit; path = .; sourceTree = SOURCE_ROOT; };
+		C19B765DEC12ADE7D53CAD59 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E406B0A0BEA8C2026110BD41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F6FE7BF0248FC2FF22A10D63 /* Example.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA42305E000338ABD032963 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A0172AE78F5D928FB7C53209 /* Assets.xcassets */,
+				C19B765DEC12ADE7D53CAD59 /* Colors.xcassets */,
 				EBCA98A28F057DF7D518B157 /* Preview Content */,
 			);
 			path = Assets;
@@ -130,6 +133,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 36FC72E69D906F48675C62BF /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -154,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02AD75FAA211C341C6992163 /* Assets.xcassets in Resources */,
+				18FBF8D9F43F848BF711A5D4 /* Colors.xcassets in Resources */,
 				7C364D687E817080B6B96DC7 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

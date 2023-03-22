@@ -2,6 +2,8 @@
 使用RxSwift提供一套完整开发工具。
 
 ## 链式调用
+
+设置背景色和布局
 ```swift
         UIView.rx.new
             .set(by: \.backgroundColor, .white)
@@ -20,3 +22,9 @@
 - SnapKit 布局
 ### Example
 xcodegen 生成项目
+
+# Installing
+### [Mint](https://github.com/yonaskolb/mint)
+```
+mint install github_name/repo_name
+```
