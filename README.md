@@ -11,6 +11,14 @@
                 mk.edges.equalToSuperview()
             }
 ```
+响应式修改属性值
+```swift
+        UIView.rx.new
+            .set(by: \.backgroundColor, .just(.red))
+            .add2(self).layout { mk in
+                mk.edges.equalToSuperview()
+            }
+```
 
 ## TODO
 1. 声明式RXView
@@ -22,9 +30,3 @@
 - SnapKit 布局
 ### Example
 xcodegen 生成项目
-
-# Installing
-### [Mint](https://github.com/yonaskolb/mint)
-```
-mint install github_name/repo_name
-```

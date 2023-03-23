@@ -150,5 +150,30 @@ public extension Reactive where Base: NSAttributedString {
         string.getParagraphStart(&star, end: &end, contentsEnd: &ptr, for: range)
         return .init(location: star, length: end - star)
     }
+    /// range所在段落NSAttributedString
+    func parapraghAttribute(for range: NSRange) -> NSAttributedString {
+        let string = NSString(string: base.string)
+        var star: Int = 0
+        var end: Int = 0
+        var ptr: Int = 0
+        string.getParagraphStart(&star, end: &end, contentsEnd: &ptr, for: range)
+        let paraRange = NSRange(location: star, length: end - star)
+        return base.attributedSubstring(from: paraRange)
+    }
+}
+
+public extension Reactive where Base: NSParagraphStyle {
+    /// 可变对象段落样式
+    var copy: Reactive<NSMutableParagraphStyle> {
+        if let value = base.mutableCopy() as? NSMutableParagraphStyle {
+            return value.rx
+        }
+        return NSMutableParagraphStyle().rx.chain { style in
+            style.textLists = base.textLists
+            style.headIndent = base.headIndent
+            style.firstLineHeadIndent = base.firstLineHeadIndent
+            style.alignment = base.alignment
+        }
+    }
 }
 #endif
