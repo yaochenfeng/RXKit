@@ -1,4 +1,5 @@
 @_exported import RxSwift
 import RxCocoa
 
-extension String: ReactiveCompatible {}
+/// 响应事件 如点击
+public typealias RXEventAction = () -> Void

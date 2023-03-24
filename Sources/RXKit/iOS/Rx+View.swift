@@ -23,8 +23,9 @@ public extension Reactive where Base: UIView {
     }
     
     /// 设置圆角
-    /// - Parameter radius: 度数
-    /// - Returns: Reactive
+    /// - Parameters:
+    ///   - radius: 度数
+    ///   - corners: CACornerMask 默认四个角
     @discardableResult
     func cornerRadius(_ radius: CGFloat, corners: CACornerMask = .rxAll) -> Self {
         base.layer.cornerRadius = radius

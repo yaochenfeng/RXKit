@@ -7,6 +7,19 @@
 
 #if canImport(UIKit)
 import UIKit
+public extension Reactive where Base: UIImage {
+    
+    /// 通过色值创建图片
+    static func new(_ color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        color.setFill()
+        UIRectFill(CGRect(origin: CGPoint.zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
+// MARK: UIVIew
 /// 通用UIView拓展
 public extension Reactive where Base: UILabel {
     /// 创建对象链式操作,Hugging 默认251
