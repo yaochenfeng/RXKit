@@ -39,6 +39,20 @@ public extension Reactive where Base: NSObject {
     static var new: Reactive<Base> {
         return Base().rx
     }
+    /// 响应式值
+    /// - Parameters:
+    ///   - keyPath: 属性
+    ///   - value: 值
+    /// - Returns: Reactive
+    @discardableResult
+    func set<Value>(by keyPath: WritableKeyPath<Base, Value>,
+                    _ observe: Observable<Value>) -> Reactive<Base> {
+        observe.subscribe(onNext: { value in
+            var subject = base
+            subject[keyPath: keyPath] = value
+        }).disposed(by: disposeBag)
+        return self
+    }
     /// 同步锁调用
     /// - Parameter action: 方法
     /// - Returns: 值

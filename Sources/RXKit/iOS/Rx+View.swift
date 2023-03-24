@@ -26,9 +26,9 @@ public extension Reactive where Base: UIView {
     /// - Parameter radius: 度数
     /// - Returns: Reactive
     @discardableResult
-    func cornerRadius(_ radius: CGFloat) -> Self {
+    func cornerRadius(_ radius: CGFloat, corners: CACornerMask = .rxAll) -> Self {
         base.layer.cornerRadius = radius
-        base.layer.masksToBounds = true
+        base.layer.maskedCorners = corners
         return self
     }
     
@@ -39,6 +39,17 @@ public extension Reactive where Base: UIView {
         base.layer.borderColor = color?.cgColor
         return self
     }
+}
+
+public extension CACornerMask {
+    /// 四边都圆角
+    static var rxAll = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
+    /// 左侧两圆角
+    static var rxLeft = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMinXMaxYCorner)
+    /// 右侧两圆角
+    static var rxRight = CACornerMask(arrayLiteral: .layerMaxXMinYCorner, .layerMaxXMaxYCorner)
+    /// 顶部两圆角
+    static var rxTop = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
 }
 
 #endif

@@ -23,7 +23,7 @@ public extension Reactive where Base: UIStackView {
         }.set(by: \.axis, .horizontal)
             .set(by: \.alignment, .center)
     }
-    /// 垂直stackView  默认居中
+    /// 垂直stackView 
     static func column(@ArrayBuilder<RXViewConvertible> builder: () -> [RXViewConvertible]) -> Reactive<Base> {
         return Base.rx.new.chain { base in
             let views = builder()
@@ -31,7 +31,6 @@ public extension Reactive where Base: UIStackView {
                 base.addArrangedSubview(view.asView())
             }
         }.set(by: \.axis, .vertical)
-            .set(by: \.alignment, .center)
     }
     
     /// 设置自定义间距

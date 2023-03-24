@@ -18,8 +18,8 @@ public extension Reactive where Base: ConstraintView {
     /// - Parameter sp: 父视图
     /// - Returns: Reactive
     @discardableResult
-    func add2(_ sp: ConstraintView) -> Self {
-        sp.addSubview(base)
+    func add2(_ sp: RXViewConvertible) -> Self {
+        sp.asView().addSubview(base)
         return self
     }
     /// snapkit make布局
