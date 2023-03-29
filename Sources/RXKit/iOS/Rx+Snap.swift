@@ -31,4 +31,23 @@ public extension Reactive where Base: ConstraintView {
         return self
     }
 }
+
+/// 转换UIView协议
+public protocol RXViewConvertible {
+    
+    /// 转为视图
+    /// - Returns: UIView
+    func asView() -> ConstraintView
+}
+
+extension ConstraintView: RXViewConvertible {
+    public func asView() -> ConstraintView {
+        return self
+    }
+}
+extension Reactive: RXViewConvertible where Base: ConstraintView {
+    public func asView() -> ConstraintView {
+        return base
+    }
+}
 #endif

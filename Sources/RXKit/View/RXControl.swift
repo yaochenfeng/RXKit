@@ -4,7 +4,7 @@
 //
 //  Created by yaochenfeng on 2023/3/24.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 public class RXControl: UIControl {
@@ -65,3 +65,5 @@ public extension Reactive where Base: RXControl {
         return self
     }
 }
+
+#endif
