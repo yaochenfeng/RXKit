@@ -10,6 +10,7 @@ let package = Package(
         .library(
             name: "RXKit",
             targets: ["RXKit"]),
+        .library(name: "RXKit-Dynamic", type: .dynamic, targets: ["RXKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
