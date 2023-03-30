@@ -1,4 +1,5 @@
-# RXKit [![GitHub release](https://img.shields.io/github/release/yaochenfeng/RXKit.svg)](https://github.com/yaochenfeng/RXKit/releases) ![Cocoapods](https://img.shields.io/cocoapods/v/RXKit)
+# RXKit ![Cocoapods](https://img.shields.io/cocoapods/v/RXKit)
+
 使用RxSwift提供一套完整开发工具。
 
 ## 链式调用
