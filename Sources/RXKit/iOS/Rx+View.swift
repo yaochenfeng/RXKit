@@ -40,6 +40,12 @@ public extension Reactive where Base: UIView {
         base.layer.borderColor = color?.cgColor
         return self
     }
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: base.bounds)
+        return renderer.image { rendererContext in
+            base.layer.render(in: rendererContext.cgContext)
+        }
+    }
 }
 
 public extension CACornerMask {
@@ -51,6 +57,8 @@ public extension CACornerMask {
     static var rxRight = CACornerMask(arrayLiteral: .layerMaxXMinYCorner, .layerMaxXMaxYCorner)
     /// 顶部两圆角
     static var rxTop = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+    /// 底部两圆角
+    static var rxBottom = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
 }
 
 #endif
