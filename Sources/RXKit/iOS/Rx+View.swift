@@ -40,6 +40,7 @@ public extension Reactive where Base: UIView {
         base.layer.borderColor = color?.cgColor
         return self
     }
+    /// 转为图片
     func asImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: base.bounds)
         return renderer.image { rendererContext in
