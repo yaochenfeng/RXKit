@@ -1,0 +1,81 @@
+PODS:
+  - CocoaLumberjack (3.8.0):
+    - CocoaLumberjack/Core (= 3.8.0)
+  - CocoaLumberjack/Core (3.8.0)
+  - DoraemonKit/Core (3.1.3):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - DoraemonKit/WithLogger (3.1.3):
+    - CocoaLumberjack
+    - DoraemonKit/Core
+  - DoraemonKit/WithMLeaksFinder (3.1.3):
+    - DoraemonKit/Core
+    - FBRetainCycleDetector
+  - FBRetainCycleDetector (0.1.4)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RXKit (0.1.0):
+    - RxCocoa (~> 6.0)
+    - SnapKit (~> 5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnapKit (5.6.0)
+  - SwiftGen (6.5.0)
+  - SwiftLint (0.51.0)
+
+DEPENDENCIES:
+  - DoraemonKit/WithLogger
+  - DoraemonKit/WithMLeaksFinder
+  - RXKit (from `.`)
+  - SwiftGen (= 6.5.0)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
+    - DoraemonKit
+    - FBRetainCycleDetector
+    - FMDB
+    - GCDWebServer
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftGen
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  RXKit:
+    :path: "."
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
+  DoraemonKit: 7448814a80d9ca56bc8db9105c464b7ec2e62623
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RXKit: ecd0f3ee69d0d74bacfcb0323ed4a26253f22053
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftGen: c3f115ede549d4b7873c3946b7d5ca538eb8b621
+  SwiftLint: 1b7561918a19e23bfed960e40759086e70f4dba5
+
+PODFILE CHECKSUM: 7e7e26280e613a475708b06e171e70ec69993252
+
+COCOAPODS: 1.11.3

@@ -1,55 +1,28 @@
 name: Example
 options:
   bundleIdPrefix: com.github.yaochenfeng
-  deploymentTarget: 
-    iOS: 14.0
+  deploymentTarget:
+    iOS: "12.0"
+  postGenCommand: bundle exec pod install
+
 settings:
   base:
     MARKETING_VERSION: 1.0.0
     CURRENT_PROJECT_VERSION: 1
-packages:
-  RXKit:
-    path: ../RXKit
+
 targets:
   Example:
-    platform: iOS
     type: application
-    sources:
-      - Example
+    platform: iOS
+    sources: [Example]
     preBuildScripts:
-      - name: Swiftlint
+      - name: lintAndGen
         basedOnDependencyAnalysis: false
-        script: |
-                if which swiftgen > /dev/null; then
-                  swiftgen
-                else
-                  echo "warning: SwiftGen is not installed. brew install swiftgen"
-                fi
-    postCompileScripts:
-      - name: Swiftlint
-        basedOnDependencyAnalysis: false
-        script: |
-                if which swiftlint > /dev/null; then
-                  swiftlint
-                else
-                  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
-                fi
-        
-    dependencies:
-      - package:   RXKit
+        script: "${PODS_ROOT}/SwiftGen/bin/swiftgen && ${PODS_ROOT}/SwiftLint/swiftlint"
     settings:
       base:
-        ENABLE_PREVIEWS: YES
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_FILE: Example/Resources/Info.plist
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
-        DEVELOPMENT_ASSET_PATHS: "\"Example/Assets/Preview Content\""
-
-
-
-    # settings:
-    #   base:
-    #     CURRENT_PROJECT_VERSION: 1
-    #     INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
-    #     MARKETING_VERSION: 1.0.0
-    #     GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+        INFOPLIST_KEY_UIMainStoryboardFile: Main

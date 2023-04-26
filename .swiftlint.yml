@@ -11,6 +11,7 @@ disabled_rules:
   - unneeded_break_in_switch       # asset 在仅在 debug 下有效。 
   - trailing_whitespace
   - trailing_comma
+  - blanket_disable_command
 opt_in_rules:
   # style & autocorrect 有利于风格统一且可自动修复，应当开启
   - attributes
