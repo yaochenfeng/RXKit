@@ -1,5 +1,5 @@
  input_dir: Example/Resources/
- output_dir: Example/
+ output_dir: Example/Resources/Generated/
 
 
 ## Generate constants for your localized strings.
@@ -22,10 +22,10 @@
      - Assets.xcassets
    outputs:
      - templateName: swift5
+       output: Assets.swift
        params:
          forceProvidesNamespaces: true
-         enumName: Assets # 枚举名称
-       output: Assets+Gen.swift
+        #  enumName: Assets # 枚举名称
 
 
 ## Generate constants for your storyboards and XIBs.

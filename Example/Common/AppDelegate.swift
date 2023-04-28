@@ -7,16 +7,45 @@ import DoraemonKit
 #if canImport(CocoaLumberjack)
         import CocoaLumberjack
 #endif
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder {
     var window: UIWindow?
-    
+}
+extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         commomService()
         setupDebug()
         
+        if #unavailable(iOS 13.0), window == nil {
+            window = .configMain()
+        }
         return true
+    }
+    
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = SceneDelegate.self // 👈🏻
+        return sceneConfig
+    }
+}
+extension UIWindow {
+    static func configMain() -> UIWindow {
+        var win: UIWindow
+        if #available(iOS 13.0, *) {
+            let windowScene = UIApplication.shared
+                            .connectedScenes
+                            .first
+            if let windowScene = windowScene as? UIWindowScene {
+                win = UIWindow(windowScene: windowScene)
+            } else {
+                win = UIWindow(frame: UIScreen.main.bounds)
+            }
+        } else {
+            win = UIWindow(frame: UIScreen.main.bounds)
+        }
+        win.rootViewController = MainAppWrapper.rootController()
+        win.makeKeyAndVisible()
+        return win
     }
 }
 
@@ -43,15 +72,5 @@ extension AppDelegate {
             DoraemonManager.shareInstance().install()
         })
 #endif
-    }
-}
-
-@available(iOS 13.0, *)
-extension AppDelegate {
-    
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }

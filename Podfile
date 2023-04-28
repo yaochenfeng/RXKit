@@ -9,10 +9,13 @@ def debug_pod #开发使用库
   pod 'DoraemonKit/WithMLeaksFinder', :configurations => ['Debug'] #可选
 end
 def local_pod #本地开发使用库
+  podSet = [].to_set
   Dir.glob(["*.podspec"]).each do |path|
     pod_name = File.basename(path,'.podspec')
-    pod pod_name, :path => '.'
+    pod pod_name, :path => '.' unless podSet.include? pod_name
+    podSet.add pod_name unless podSet.include? pod_name
   end
+  pod 'RXKit' unless podSet.include? 'RXKit'
 end
 
 target 'Example' do
