@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name = "RXKit"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.summary = "RXExts."
 
   s.description = <<-DESC
@@ -12,12 +12,10 @@ Pod::Spec.new do |s|
 DESC
 
   s.homepage = "https://github.com/yaochenfeng/#{s.name}"
-  s.source           = { :git => "https://github.com/yaochenfeng/#{s.name}.git", :branch => "master" }
+  s.source           = { :git => "https://github.com/yaochenfeng/#{s.name}.git", :tag => s.version.to_s }
   s.license = {
     :type => "MIT",
-    :text => <<-LICENSE,
-copyright MIT
-LICENSE
+    :text => "MIT"
   }
   s.author = { "yaochenfeng" => "chenfengyao@foxmail.com" }
   s.platform = :ios, "11.0"
