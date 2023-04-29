@@ -13,7 +13,7 @@ public extension Container {
         }
     }
     /// 无参数解析
-    func resolve<T>(_ serviceType: T.Type) -> T? {
+    func resolve<T>(_ serviceType: T.Type = T.self) -> T? {
         return resolve(serviceType, name: nil, argument: ())
     }
 }
@@ -39,7 +39,14 @@ public class RXContainer: Container {
         factories[key] = value
     }
     func getFactory(_ key: SerivceKey) -> SerivceFactory? {
-        return factories[key]
+        if let value = factories[key] { //类型参数别名一致
+            return value
+        } else if let value = factories[key.withoutName()] {    //类型参数一致
+            return value
+        } else if let value = factories[key.onlyService()] {    //类型一致
+            return value
+        }
+        return nil
     }
 
     public static let shared = RXContainer()
@@ -66,8 +73,11 @@ struct SerivceKey: Hashable {
         self.argumentType = arg
         self.name = name
     }
-    func withDefault() -> SerivceKey {
+    func withoutName() -> SerivceKey {
         return SerivceKey(serviceType: serviceType, arg: argumentType, name: nil)
+    }
+    func onlyService() -> SerivceKey {
+        return SerivceKey(serviceType: serviceType, arg: Void.self, name: nil)
     }
 }
 
