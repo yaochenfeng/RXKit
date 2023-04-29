@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		61ED59AFF4CAAFE8BE7794CA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C8786C357E4C66190D6CE /* App.swift */; };
 		69E33DBBFF498F45DD588571 /* RoutePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C10D07CCC3224530AA3F56 /* RoutePageView.swift */; };
 		79BFE8A9A2107DB6F0D3D50B /* RXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5907809295694AE75DCC4 /* RXNavigationController.swift */; };
+		8F38736B29FD9DDF00B3F410 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F38736A29FD9DDF00B3F410 /* DemoViewController.swift */; };
 		D5231B70259C987FF9FBE519 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5244DED268233B880335A65 /* Pods_Example.framework */; };
 		F82B33E97AF11C2D5D9A659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9BA92B4C370D66B9AB0595 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,11 +29,12 @@
 		5C9BA92B4C370D66B9AB0595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F3751402B1674023FAF5E05 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		691C8786C357E4C66190D6CE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		8F38736A29FD9DDF00B3F410 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A1625F29E91F7B9DA6690E5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3B4E441690CF3ADAABF6F8 /* App+root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+root.swift"; sourceTree = "<group>"; };
 		DFCEAAE68600F9CA99294FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5244DED268233B880335A65 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6FE7BF0248FC2FF22A10D63 /* Example.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FE7BF0248FC2FF22A10D63 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 				188233451CACDA0BD0F75DA7 /* Pods-Example.debug.xcconfig */,
 				5F3751402B1674023FAF5E05 /* Pods-Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3B4E441690CF3ADAABF6F8 /* App+root.swift */,
+				8F38736A29FD9DDF00B3F410 /* DemoViewController.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -177,8 +179,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 36FC72E69D906F48675C62BF /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -283,6 +283,7 @@
 				79BFE8A9A2107DB6F0D3D50B /* RXNavigationController.swift in Sources */,
 				69E33DBBFF498F45DD588571 /* RoutePageView.swift in Sources */,
 				5B25804D318F8912EFFF81DD /* SceneDelegate.swift in Sources */,
+				8F38736B29FD9DDF00B3F410 /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,6 +45,7 @@ extension UIWindow {
         }
         win.rootViewController = MainAppWrapper.rootController()
         win.makeKeyAndVisible()
+       
         return win
     }
 }

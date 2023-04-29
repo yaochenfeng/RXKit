@@ -10,6 +10,10 @@ import UIKit
 extension MainAppWrapper {
     /// 项目根控制器
     static func rootController() -> UIViewController {
-        return RXNavigationController.rx.new.base
+        let vc = DemoViewController()
+        RXContainer.shared.register {
+            return vc
+        }
+        return RXNavigationController(rootViewController: vc)
     }
 }

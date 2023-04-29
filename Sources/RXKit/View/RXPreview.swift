@@ -25,7 +25,6 @@ public struct RXPreview<Base: UIView>: UIViewRepresentable {
     public typealias UIViewType = Base
 }
 
-
 /// controller 转SwiftUI
 @available(iOS 13.0, *)
 public struct RXPagePreview<Page: UIViewController>: UIViewControllerRepresentable {
