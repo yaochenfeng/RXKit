@@ -16,4 +16,14 @@ extension RXContainer {
         let object = block?(self, argument)
         return object
     }
+    func getFactory(_ key: SerivceKey) -> BeanFactory? {
+        if let value = factories[key] { // 类型参数别名一致
+            return value
+        } else if let value = factories[key.withoutName()] {    // 类型参数一致
+            return value
+        } else if let value = factories[key.onlyService()] {    // 类型一致
+            return value
+        }
+        return nil
+    }
 }

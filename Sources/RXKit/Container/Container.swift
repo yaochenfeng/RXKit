@@ -1,5 +1,5 @@
 /// 服务容器
-public protocol Container: class {
+public protocol Container: AnyObject {
     /// 基于参数的服务注册
     func register<T, A>(_ serviceType: T.Type, name: String?, factory: @escaping (Container, A) -> T)
     /// 基于参数的服务解析
@@ -35,20 +35,10 @@ public class RXContainer: Container {
         value.container = self
         factories[key] = value
     }
-    func getFactory(_ key: SerivceKey) -> BeanFactory? {
-        if let value = factories[key] { // 类型参数别名一致
-            return value
-        } else if let value = factories[key.withoutName()] {    // 类型参数一致
-            return value
-        } else if let value = factories[key.onlyService()] {    // 类型一致
-            return value
-        }
-        return nil
-    }
 
     public static let shared = RXContainer()
     public init() {}
-    private var factories = [SerivceKey: BeanFactory]()
+    internal var factories = [SerivceKey: BeanFactory]()
 }
 
 struct SerivceKey: Hashable {
