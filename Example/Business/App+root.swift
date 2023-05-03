@@ -11,7 +11,7 @@ extension MainAppWrapper {
     /// 项目根控制器
     static func rootController() -> UIViewController {
         let vc = DemoViewController()
-        RXContainer.shared.register {
+        RXContainer.shared.register { _ in 
             return vc
         }
         return RXNavigationController(rootViewController: vc)

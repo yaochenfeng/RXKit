@@ -1,15 +1,15 @@
 /// 服务容器
-public protocol Container {
+public protocol Container: class {
     /// 基于参数的服务注册
-    func register<T, A>(_ serviceType: T.Type, name: String?, factory: @escaping (A) -> T)
+    func register<T, A>(_ serviceType: T.Type, name: String?, factory: @escaping (Container, A) -> T)
     /// 基于参数的服务解析
     func resolve<T, A>(_ serviceType: T.Type, name: String?, argument: A) -> T?
 }
 public extension Container {
     /// 无参数服务注册
-    func register<T>(_ serviceType: T.Type = T.self, factory: @escaping () -> T) {
-        return register(serviceType, name: nil) { (_: Void) in
-            factory()
+    func register<T>(_ serviceType: T.Type = T.self, factory: @escaping (Container) -> T) {
+        return register(serviceType, name: nil) { (_: Container, _: Void) in
+            factory(self)
         }
     }
     /// 无参数解析
@@ -26,24 +26,21 @@ protocol ServiceProvider {
 }
 
 public class RXContainer: Container {
-    public func resolve<T, A>(_ serviceType: T.Type, name: String?, argument: A) -> T? {
+    public func register<T, A>(
+        _ serviceType: T.Type,
+        name: String?,
+        factory: @escaping (Container, A) -> T) {
         let key = SerivceKey(serviceType: serviceType, arg: A.self, name: name)
-        guard let factory = getFactory(key) else { return nil }
-        let block = factory.factory as? (A) -> T
-        return block?(argument)
-    }
-    
-    public func register<T, A>(_ serviceType: T.Type, name: String?, factory: @escaping (A) -> T) {
-        let key = SerivceKey(serviceType: serviceType, arg: A.self, name: name)
-        let value = SerivceFactory(serviceType: serviceType, argumentsType: A.self, factory: factory)
+        let value = BeanFactory(serviceType: serviceType, argumentsType: A.self, factory: factory)
+        value.container = self
         factories[key] = value
     }
-    func getFactory(_ key: SerivceKey) -> SerivceFactory? {
-        if let value = factories[key] { //类型参数别名一致
+    func getFactory(_ key: SerivceKey) -> BeanFactory? {
+        if let value = factories[key] { // 类型参数别名一致
             return value
-        } else if let value = factories[key.withoutName()] {    //类型参数一致
+        } else if let value = factories[key.withoutName()] {    // 类型参数一致
             return value
-        } else if let value = factories[key.onlyService()] {    //类型一致
+        } else if let value = factories[key.onlyService()] {    // 类型一致
             return value
         }
         return nil
@@ -51,7 +48,7 @@ public class RXContainer: Container {
 
     public static let shared = RXContainer()
     public init() {}
-    private var factories = [SerivceKey: SerivceFactory]()
+    private var factories = [SerivceKey: BeanFactory]()
 }
 
 struct SerivceKey: Hashable {
@@ -78,16 +75,5 @@ struct SerivceKey: Hashable {
     }
     func onlyService() -> SerivceKey {
         return SerivceKey(serviceType: serviceType, arg: Void.self, name: nil)
-    }
-}
-
-struct SerivceFactory {
-    internal let serviceType: Any.Type
-    internal let argumentsType: Any.Type
-    internal let factory: Any
-    internal init(serviceType: Any.Type, argumentsType: Any.Type, factory: Any) {
-            self.serviceType = serviceType
-            self.argumentsType = argumentsType
-            self.factory = factory
     }
 }
