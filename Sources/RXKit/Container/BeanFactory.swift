@@ -9,11 +9,11 @@ import Foundation
 
 /// bean定义
 public class BeanFactory {
-    internal let serviceType: Any.Type
+    internal let beanType: Any.Type
     internal let argumentsType: Any.Type
     internal let factory: Any
-    internal init(serviceType: Any.Type, argumentsType: Any.Type, factory: Any) {
-            self.serviceType = serviceType
+    internal init(beanType: Any.Type, argumentsType: Any.Type, factory: Any) {
+            self.beanType = beanType
             self.argumentsType = argumentsType
             self.factory = factory
     }
