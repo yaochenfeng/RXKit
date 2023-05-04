@@ -17,7 +17,7 @@ DESC
     :type => "MIT",
     :text => "MIT"
   }
-  s.author = { "yaochenfeng" => "chenfengyao@foxmail.com" }
+  s.author = { "yaochenfeng" => "282696845@qq.com" }
   s.platform = :ios, "11.0"
   s.swift_version = "5.4"
   s.source_files = "Sources/#{s.name}/**/*.swift"
