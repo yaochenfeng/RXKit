@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.1.10](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.9...v0.1.10) (2023-05-04)
+
+
+### Features
+
+* add viewmodel ([e4110d8](https://www.github.com/yaochenfeng/RXKit/commit/e4110d8cc1db124aae6e6d5b00e43c7c76fa37ba))
+* ViewModel ([9159a28](https://www.github.com/yaochenfeng/RXKit/commit/9159a28c15a780fae48ce35c1a14cadb86cb2fa1))
+* 添加 Autowired ([b6b5866](https://www.github.com/yaochenfeng/RXKit/commit/b6b586669b9ad736336b901bfce04231a36903f2))
+
+
+### Bug Fixes
+
+* Container ([7f518c6](https://www.github.com/yaochenfeng/RXKit/commit/7f518c60683a10150a44cbedc7f5fd561cf9ad35))
+* rm package ([6132a55](https://www.github.com/yaochenfeng/RXKit/commit/6132a557029c42a8d61cea53ddd4920cdb7d01c3))
+* update Demo ([c504570](https://www.github.com/yaochenfeng/RXKit/commit/c50457001a966fb5ed915a40835b7fc94d62f4db))
+
 ### [0.1.9](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.8...v0.1.9) (2023-05-04)
 
 
