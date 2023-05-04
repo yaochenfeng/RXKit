@@ -23,7 +23,6 @@ jobs:
       - name: Release Gem
         run: |
           gem install bundler
-          bundle config unset deployment
           bundle install
           pod lib lint --allow-warnings
           pod trunk push --allow-warnings
