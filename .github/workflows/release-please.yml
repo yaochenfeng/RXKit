@@ -19,6 +19,7 @@ jobs:
           release-type: simple
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
+          include-v-in-tag: false
 
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
