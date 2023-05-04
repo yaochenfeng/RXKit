@@ -20,10 +20,10 @@ jobs:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
 
-      - name: Release Cocoapods
-      run: |
-        set -eo pipefail
-        pod lib lint --allow-warnings
-        pod trunk push --allow-warnings
-      env:
-        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      - name: Release Gem
+        run: |
+          gem install bundler
+          bundle config unset deployment
+          bundle install
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings
