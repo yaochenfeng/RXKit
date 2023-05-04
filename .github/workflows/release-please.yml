@@ -19,7 +19,8 @@ jobs:
           release-type: simple
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-
+          
+      - uses: actions/checkout@v1
       - name: Release Gem
         run: |
           gem install bundler
