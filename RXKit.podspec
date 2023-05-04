@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name = "RXKit"
-  s.version = "0.1.3"
+  s.version = begin; File.read('version.txt'); rescue; '0.1.0'; end
   s.summary = "RXExts."
 
   s.description = <<-DESC

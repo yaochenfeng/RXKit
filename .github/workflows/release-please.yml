@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+name: release-please
+jobs:
+  release-please:
+    runs-on: macOS-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        id: release
+        with:
+          # Use https://github.com/googleapis/release-please/blob/main/src/strategies/ruby.ts Release Type.
+          release-type: simple
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
