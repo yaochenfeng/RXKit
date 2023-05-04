@@ -32,7 +32,9 @@ DESC
     sp.source_files = "Sources/#{sp.name}/*.swift"
   end
   s.subspec 'View' do |sp|
-    puts sp
+    sp.source_files = "Sources/#{sp.name}/*.swift"
+  end
+  s.subspec 'ViewModel' do |sp|
     sp.source_files = "Sources/#{sp.name}/*.swift"
   end
 end
