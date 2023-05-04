@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.7](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.6...v0.1.7) (2023-05-04)
+
+
+### Features
+
+* pod release ([4095ba7](https://www.github.com/yaochenfeng/RXKit/commit/4095ba7b25ee2812b244c6e23118dc65dcaca752))
+
 ### [0.1.6](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.5...v0.1.6) (2023-05-04)
 
 
