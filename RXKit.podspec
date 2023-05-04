@@ -20,8 +20,19 @@ DESC
   s.author = { "yaochenfeng" => "282696845@qq.com" }
   s.platform = :ios, "11.0"
   s.swift_version = "5.4"
-  s.source_files = "Sources/#{s.name}/**/*.swift"
+  s.source_files = "Sources/#{s.name}/*.swift"
   s.dependency "RxCocoa", "~> 6.0"
   s.dependency "SnapKit", "~> 5.0"
   s.preserve_path = 'version.txt'
+
+  s.subspec 'Container' do |sp|
+    sp.source_files = "Sources/#{sp.name}/*.swift"
+  end
+  s.subspec 'Extension' do |sp|
+    sp.source_files = "Sources/#{sp.name}/*.swift"
+  end
+  s.subspec 'View' do |sp|
+    puts sp
+    sp.source_files = "Sources/#{sp.name}/*.swift"
+  end
 end

@@ -8,10 +8,10 @@
 import UIKit
 
 class DemoViewController: UIViewController {
-
+    @Autowired(required: true)
+    var vc: DemoViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = RXContainer.shared.resolve(Self.self)
         print("vc\(vc) : \(vc == self)")
         // Do any additional setup after loading the view.
     }
