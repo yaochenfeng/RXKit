@@ -12,7 +12,7 @@ class DemoViewController: UIViewController {
     var vc: DemoViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("vc\(vc) : \(vc == self)")
+        print("vc\(String(describing: vc))")
         // Do any additional setup after loading the view.
     }
     
