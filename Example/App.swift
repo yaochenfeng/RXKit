@@ -26,9 +26,9 @@ struct MainApp: App {
     @UIApplicationDelegateAdaptor var appDelegate: AppDelegate
     var body: some Scene {
         WindowGroup {
-            RoutePageView {
+            RXPagePreview {
                 return MainAppWrapper.rootController()
-            }
+            }.edgesIgnoringSafeArea(.all)
         }
     }
 }
