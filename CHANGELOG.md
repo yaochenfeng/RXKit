@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.8](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.7...v0.1.8) (2023-05-04)
+
+
+### Features
+
+* 文档添加 ([244195c](https://www.github.com/yaochenfeng/RXKit/commit/244195c966102e91dd9847cd4a73b4bc5e85c65f))
+
 ### [0.1.7](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.6...v0.1.7) (2023-05-04)
 
 
