@@ -1,0 +1,13 @@
+# Changelog
+
+### [0.1.3](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.2...v0.1.3) (2023-05-04)
+
+
+### Features
+
+* github release ([3bb6876](https://www.github.com/yaochenfeng/RXKit/commit/3bb68763dbe452206248d15dc4b92d2094236268))
+
+
+### Bug Fixes
+
+* 添加容器参数 ([0654887](https://www.github.com/yaochenfeng/RXKit/commit/0654887861f2fd120cae3dc51a929128affa0b9c))
