@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.9](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.8...v0.1.9) (2023-05-04)
+
+
+### Features
+
+* 文档容器管理 ([ce0c9d8](https://www.github.com/yaochenfeng/RXKit/commit/ce0c9d8d347bc57f846a91e483a035bda66e21f0))
+
 ### [0.1.8](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.7...v0.1.8) (2023-05-04)
 
 
