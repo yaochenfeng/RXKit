@@ -20,10 +20,25 @@
                 mk.edges.equalToSuperview()
             }
 ```
+## 容器管理
+
+注册
+```swift
+        RXContainer.shared.register { _ in 
+            return UIViewController()
+        }
+```
+
+使用
+```swift
+RXContainer.shared.resolve(UIViewController.self)
+```
+        
 
 ## TODO
 1. 声明式RXView
 2. RXPreview预览uiview
+
 
 
 ## 结构
