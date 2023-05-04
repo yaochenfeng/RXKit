@@ -27,7 +27,7 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-  - RXKit (0.1.7):
+  - RXKit (0.1.8):
     - RxCocoa (~> 6.0)
     - SnapKit (~> 5.0)
   - RxRelay (6.5.0):
@@ -69,7 +69,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RXKit: 93284956c00fa488e9c6e8d04e19cdba21f643cc
+  RXKit: d53967dbce61dfc2e63ac4616373b4b0833b8303
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25

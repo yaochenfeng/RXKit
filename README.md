@@ -1,4 +1,4 @@
-# RXKit ![Cocoapods](https://img.shields.io/cocoapods/v/RXKit)
+# RXKit ![Cocoapods](https://img.shields.io/cocoapods/v/RXKit.svg)
 
 使用RxSwift提供一套完整开发工具。
 
