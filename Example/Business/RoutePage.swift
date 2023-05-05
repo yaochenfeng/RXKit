@@ -19,16 +19,17 @@ extension RoutePage: RXRouteConvertible {
     }
     
     func getController() -> UIViewController? {
-        return nil
+        switch self {
+        case .home:
+            return DemoViewController()
+        }
     }
     /// 通用导航控制器
     static func getNavigationController() -> UINavigationController {
-        return RXNavigationController.rx.new.base
-    }
-}
-
-extension Reactive where Base: RXNavigationController {
-    static var new: Reactive<Base> {
-        return Base().rx
+        let nav = RXNavigationController.shared
+        if nav.viewControllers.isEmpty, let home = RoutePage.home.getController() {
+            nav.setViewControllers([home], animated: false)
+        }
+        return nav
     }
 }
