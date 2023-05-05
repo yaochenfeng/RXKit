@@ -1,3 +1,10 @@
+//
+//  File.swift
+//  
+//
+//  Created by yaochenfeng on 2023/3/9.
+//
+
 @_exported import RxSwift
 import RxCocoa
 
@@ -12,4 +19,9 @@ extension ObservableType {
             return value[keyPath: keyPath]
         }
     }
+}
+// 嵌套结构体
+internal struct AssociatedKeys {
+    static var dispose: UInt8 = 0
+    static var routeId: UInt8 = 0
 }
