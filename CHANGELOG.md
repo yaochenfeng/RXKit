@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.12](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.11...v0.1.12) (2023-05-05)
+
+
+### Bug Fixes
+
+* route ([6581d1b](https://www.github.com/yaochenfeng/RXKit/commit/6581d1b0a6a83ef7c07484f61da78a29f64fc790))
+
 ### [0.1.11](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.10...v0.1.11) (2023-05-05)
 
 
