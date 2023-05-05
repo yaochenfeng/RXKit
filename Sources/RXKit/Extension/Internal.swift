@@ -9,4 +9,6 @@ import Foundation
 // 嵌套结构体
 internal struct AssociatedKeys {
     static var dispose: UInt8 = 0
+    static var routeId: UInt8 = 0
+    
 }

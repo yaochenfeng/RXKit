@@ -8,4 +8,5 @@
 protocol ViewModelType {
     associatedtype State
     associatedtype Output
+    func getOutput(_ state: State) -> Output
 }

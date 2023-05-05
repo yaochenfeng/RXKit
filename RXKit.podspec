@@ -37,4 +37,7 @@ DESC
   s.subspec 'ViewModel' do |sp|
     sp.source_files = "Sources/#{sp.name}/*.swift"
   end
+  s.subspec 'Route' do |sp|
+    sp.source_files = "Sources/#{sp.name}/*.swift"
+  end
 end
