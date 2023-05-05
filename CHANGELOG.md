@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.14](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.13...v0.1.14) (2023-05-05)
+
+
+### Features
+
+* add WeakArray ([80552d3](https://www.github.com/yaochenfeng/RXKit/commit/80552d3730cbb91ebfa8bcb5f1d79af51f09ec1a))
+
 ### [0.1.13](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.12...v0.1.13) (2023-05-05)
 
 
