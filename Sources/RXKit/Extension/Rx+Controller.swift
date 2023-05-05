@@ -10,16 +10,17 @@ import UIKit
 /// 通用UIViewController拓展
 public extension Reactive where Base: UIViewController {
     /// 路由页面Id
-    internal(set) var routePageId: String {
-        get {
-            guard let value = objc_getAssociatedObject(base, &AssociatedKeys.routeId) as? String else {
-                return ""
-            }
-            return value
+    var routePageId: String {
+        guard let value = objc_getAssociatedObject(base, &AssociatedKeys.routeId) as? String else {
+            return ""
         }
-        set {
-            objc_setAssociatedObject(base, &AssociatedKeys.routeId, newValue, .OBJC_ASSOCIATION_RETAIN)
-        }
+        return value
+    }
+    /// 设置页面路由id
+    @discardableResult
+    func setRoutePageId(_ id: String) -> Self {
+        objc_setAssociatedObject(base, &AssociatedKeys.routeId, id, .OBJC_ASSOCIATION_RETAIN)
+        return self
     }
 }
 #endif

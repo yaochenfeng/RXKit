@@ -19,10 +19,16 @@ extension RoutePage: RXRouteConvertible {
     }
     
     func getController() -> UIViewController? {
+        var controller: UIViewController?
+        
         switch self {
         case .home:
-            return DemoViewController()
+            DemoViewController.rx.new.chain { base in
+                controller = base
+                base.navigationItem.title = "demo"
+            }
         }
+        return controller?.rx.setRoutePageId(routeId).base
     }
     /// 通用导航控制器
     static func getNavigationController() -> UINavigationController {
