@@ -18,12 +18,24 @@ public protocol RXRouteConvertible {
     func getController() -> UIViewController?
     /// 获取导航控制器
     static func getNavigationController() -> UINavigationController
+    /// 导航到对应路由
+    func navigate(animated: Bool, source: UIViewController?)
 }
-extension RXRouteConvertible {
+public extension RXRouteConvertible {
     /// 通用导航控制器
-    public static func getNavigationController() -> UINavigationController {
+    static func getNavigationController() -> UINavigationController {
         return RXNavigationController.shared
     }
+    /// 默认使用push
+    func navigate(animated: Bool = true, source: UIViewController? = nil) {
+        let nav = Self.getNavigationController()
+        if let old = nav.rx.getRouteController(routeId) {
+            nav.popToViewController(old, animated: animated)
+        } else if let vc = getController() {
+            nav.pushViewController(vc, animated: animated)
+        }
+    }
+    
 }
 /// 通用UIViewController拓展
 public extension Reactive where Base: UINavigationController {
@@ -31,6 +43,13 @@ public extension Reactive where Base: UINavigationController {
     func contain(_ routeId: String) -> Bool {
         guard !routeId.isEmpty else { return false }
         return base.viewControllers.contains { vc in
+            return vc.rx.routePageId == routeId
+        }
+    }
+    /// 根据routeId 获取controller
+    func getRouteController(_ routeId: String) -> UIViewController? {
+        guard !routeId.isEmpty else { return nil }
+        return base.viewControllers.first { vc in
             return vc.rx.routePageId == routeId
         }
     }
