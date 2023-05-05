@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
 使用RxSwift提供一套完整开发工具。
 DESC
 
-  s.homepage = "https://github.com/yaochenfeng/#{s.name}"
-  s.source           = { :git => "https://github.com/yaochenfeng/#{s.name}.git", :tag => 'v' + s.version.to_s }
+  s.homepage = "https://github.com/yaochenfeng/RXKit"
+  s.source           = { :git => "https://github.com/yaochenfeng/RXKit.git", :tag => 'v' + s.version.to_s }
   s.license = {
     :type => "MIT",
     :text => "MIT"
