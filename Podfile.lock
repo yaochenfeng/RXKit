@@ -27,29 +27,29 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-  - RXKit (0.1.11):
+  - RXKit (0.1.12):
     - RxCocoa (~> 6.0)
-    - RXKit/Container (= 0.1.11)
-    - RXKit/Extension (= 0.1.11)
-    - RXKit/Route (= 0.1.11)
-    - RXKit/View (= 0.1.11)
-    - RXKit/ViewModel (= 0.1.11)
+    - RXKit/Container (= 0.1.12)
+    - RXKit/Extension (= 0.1.12)
+    - RXKit/Route (= 0.1.12)
+    - RXKit/View (= 0.1.12)
+    - RXKit/ViewModel (= 0.1.12)
     - SnapKit (~> 5.0)
-  - RXKit/Container (0.1.11):
-    - RxCocoa (~> 6.0)
-    - SnapKit (~> 5.0)
-  - RXKit/Extension (0.1.11):
+  - RXKit/Container (0.1.12):
     - RxCocoa (~> 6.0)
     - SnapKit (~> 5.0)
-  - RXKit/Route (0.1.11):
+  - RXKit/Extension (0.1.12):
+    - RxCocoa (~> 6.0)
+    - SnapKit (~> 5.0)
+  - RXKit/Route (0.1.12):
+    - RxCocoa (~> 6.0)
+    - RXKit/ViewModel
+    - SnapKit (~> 5.0)
+  - RXKit/View (0.1.12):
     - RxCocoa (~> 6.0)
     - RXKit/Extension
     - SnapKit (~> 5.0)
-  - RXKit/View (0.1.11):
-    - RxCocoa (~> 6.0)
-    - RXKit/Extension
-    - SnapKit (~> 5.0)
-  - RXKit/ViewModel (0.1.11):
+  - RXKit/ViewModel (0.1.12):
     - RxCocoa (~> 6.0)
     - RXKit/Extension
     - SnapKit (~> 5.0)
@@ -92,7 +92,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RXKit: 43884bd7b246d8bc2c0e3f39ff7143546c7630e7
+  RXKit: 36bb49c23389016bd90b666c3143b3569eeb7b57
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25

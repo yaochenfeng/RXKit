@@ -40,6 +40,6 @@ DESC
   end
   s.subspec 'Route' do |sp|
     sp.source_files = "Sources/#{sp.name}/*.swift"
-    sp.dependency "RXKit/Extension"
+    sp.dependency "RXKit/ViewModel"
   end
 end
