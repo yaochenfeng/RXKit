@@ -40,3 +40,9 @@ class DemoViewController: UIViewController {
     */
 
 }
+
+class DemoNav: RXNavigationController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

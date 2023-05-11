@@ -10,6 +10,9 @@ import UIKit
 extension MainAppWrapper {
     /// 项目根控制器
     static func rootController() -> UIViewController {
+        RXNavigationController.factory = {
+            return DemoNav()
+        }
         return RoutePage.getNavigationController().rx.then { nav in
             if nav.viewControllers.isEmpty, let home = RoutePage.home.getController() {
                 nav.setViewControllers([home], animated: false)

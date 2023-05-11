@@ -27,6 +27,9 @@ public extension Reactive where Base: UINavigationController {
 }
 
 open class RXNavigationController: UINavigationController {
-    public static let shared = RXNavigationController()
+    public static var factory = {
+        return RXNavigationController()
+    }
+    public static let shared = factory()
 }
 #endif
