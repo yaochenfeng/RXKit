@@ -21,17 +21,13 @@ jobs:
           bump-patch-for-minor-pre-major: true
 
       - uses: actions/checkout@v2
-        if: ${{ steps.release.outputs.release_created }}
       
       - uses: ruby/setup-ruby@v1
         if: ${{ steps.release.outputs.release_created }}
-        with:
-          bundler-cache: true
         
       - name: Lint pod
         run: |
           pod lib lint --allow-warnings
-        if: ${{ steps.release.outputs.release_created }}
       - name: Release pod
         run: |
           pod trunk push --allow-warnings
