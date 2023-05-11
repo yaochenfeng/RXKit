@@ -13,8 +13,20 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Demo"
+        view.backgroundColor = Asset.bgColor.color
         print("vc\(String(describing: vc))")
         // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下页", style: .done, target: nil, action: nil).rx.then({ base in
+            base.rx.tap.map { _ in
+                RoutePage.home.navigate()
+            }.subscribe().disposed(by: rx.disposeBag)
+        })
+        guard let nav = navigationController, nav.viewControllers.count > 1 else { return  }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "上一页", style: .done, target: nil, action: nil).rx.then({ base in
+            base.rx.tap.map { _ in
+                RoutePage.navigateBack()
+            }.subscribe().disposed(by: rx.disposeBag)
+        })
     }
     
     /*

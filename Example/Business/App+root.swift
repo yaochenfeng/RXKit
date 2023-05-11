@@ -10,11 +10,10 @@ import UIKit
 extension MainAppWrapper {
     /// 项目根控制器
     static func rootController() -> UIViewController {
-        let nav = RoutePage.getNavigationController()
-        RXContainer.shared.register { _ in
-            return nav
+        return RoutePage.getNavigationController().rx.then { nav in
+            if nav.viewControllers.isEmpty, let home = RoutePage.home.getController() {
+                nav.setViewControllers([home], animated: false)
+            }
         }
-        RoutePage.home.navigate(animated: false, source: nil)
-        return nav
     }
 }

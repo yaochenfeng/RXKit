@@ -15,6 +15,9 @@ extension RoutePage: RXRouteConvertible {
     }
     
     var routeId: String {
+        if self == .home {
+            return ""
+        }
         return rawValue
     }
     
@@ -29,13 +32,5 @@ extension RoutePage: RXRouteConvertible {
             }
         }
         return controller?.rx.setRoutePageId(routeId).base
-    }
-    /// 通用导航控制器
-    static func getNavigationController() -> UINavigationController {
-        let nav = RXNavigationController.shared
-        if nav.viewControllers.isEmpty, let home = RoutePage.home.getController() {
-            nav.setViewControllers([home], animated: false)
-        }
-        return nav
     }
 }
