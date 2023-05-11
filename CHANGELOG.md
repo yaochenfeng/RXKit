@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.15](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.14...v0.1.15) (2023-05-11)
+
+
+### Bug Fixes
+
+* Route 路由跳转 ([77dfdd7](https://www.github.com/yaochenfeng/RXKit/commit/77dfdd74ce4fed5d50e1630bc3e6216f72feaec6))
+
 ### [0.1.14](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.13...v0.1.14) (2023-05-05)
 
 
