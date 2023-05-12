@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.17](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.16...v0.1.17) (2023-05-12)
+
+
+### Features
+
+* service ([14998ff](https://www.github.com/yaochenfeng/RXKit/commit/14998ff5c295c688642b831e34e7335427704f12))
+
 ### [0.1.16](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.15...v0.1.16) (2023-05-11)
 
 
