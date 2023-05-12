@@ -4,7 +4,7 @@
 //
 //  Created by yaochenfeng on 2023/4/28.
 //
-#if canImport(SwiftUI)
+#if canImport(SwiftUI) && canImport(UIKit)
 import SwiftUI
 
 /// view 转SwiftUI

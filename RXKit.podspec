@@ -18,7 +18,8 @@ DESC
     :text => "MIT"
   }
   s.author = { "yaochenfeng" => "282696845@qq.com" }
-  s.platform = :ios, "11.0"
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.11'
   s.swift_version = "5.4"
   s.dependency "RxCocoa", "~> 6.0"
   s.dependency "SnapKit", "~> 5.0"
