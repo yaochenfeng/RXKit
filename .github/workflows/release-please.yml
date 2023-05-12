@@ -14,21 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
-        if: ${{ steps.release.outputs.release_created }}
         with:
           bundler-cache: true
+      - name: Lint pod
+        run: |
+          pod lib lint --allow-warnings
+        if: steps.build.outputs.exit_code == 0
       - uses: GoogleCloudPlatform/release-please-action@v2
+        if: steps.build.outputs.exit_code == 0
         id: release
         with:
           # Use https://github.com/googleapis/release-please/blob/main/src/strategies/ruby.ts Release Type.
           release-type: simple
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-        
-      - name: Lint pod
-        run: |
-          pod lib lint --allow-warnings
-        if: ${{ steps.release.outputs.release_created }}
       - name: Release pod
         run: |
           pod trunk push --allow-warnings
