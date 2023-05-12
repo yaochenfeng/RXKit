@@ -92,7 +92,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RXKit: 0a68321331f307dcb697a054cea2816ca0ed383f
+  RXKit: dff3f3cfd8090bb800e8b5bb6a014977967d47dd
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
