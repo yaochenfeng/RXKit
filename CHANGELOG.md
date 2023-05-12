@@ -1,5 +1,6 @@
 # Changelog
 
+### [0.1.16](https://www.github.com/yaochenfeng/RXKit/compare/v0.1.15...v0.1.16) (2023-05-11)
 
 ### Features
 
