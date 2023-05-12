@@ -12,7 +12,7 @@ public struct Autowired<T>: Codable {
     var required: Bool = false
     weak var container: Container?
     public var wrappedValue: T? {
-        return container?.resolve(T.self)
+        return container?.optional()
     }
     public func encode(to encoder: Encoder) throws {
         

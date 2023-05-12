@@ -24,7 +24,7 @@ DESC
   s.dependency "SnapKit", "~> 5.0"
   s.preserve_path = 'version.txt'
 
-  s.subspec 'Container' do |sp|
+  s.subspec 'DFService' do |sp|
     sp.source_files = "Sources/#{sp.name}/*.swift"
   end
   s.subspec 'Extension' do |sp|
