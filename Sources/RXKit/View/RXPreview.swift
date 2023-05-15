@@ -6,6 +6,7 @@
 //
 #if canImport(SwiftUI) && canImport(UIKit)
 import SwiftUI
+import UIKit
 
 /// view 转SwiftUI
 @available(iOS 13.0, *)
