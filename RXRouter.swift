@@ -5,7 +5,8 @@
 //  Created by yaochenfeng on 2023/5/16.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 public class RXRouter {
     public static let shared = RXRouter()
@@ -40,3 +41,5 @@ public extension RXRouter {
         return self.open(url.absoluteString, animated: animated, source: source)
     }
 }
+
+#endif
