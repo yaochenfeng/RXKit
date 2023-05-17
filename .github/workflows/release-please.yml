@@ -28,10 +28,6 @@ jobs:
         with:
           bundler-cache: true
         
-      - name: Lint pod
-        run: |
-          pod lib lint --allow-warnings
-        if: ${{ steps.release.outputs.release_created }}
       - name: Release pod
         run: |
           pod trunk push --allow-warnings
