@@ -27,6 +27,8 @@ class DemoViewController: UIViewController {
                 RoutePage.navigateBack()
             }.subscribe().disposed(by: rx.disposeBag)
         })
+        RXRouter.shared.addRoute(RoutePage.self)
+        print("canOpen\(RXRouter.shared.canOpen(RoutePage.home.rawValue))")
     }
     
     /*

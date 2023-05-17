@@ -7,22 +7,19 @@
 
 import Foundation
 
-public enum DFError {
-    case unknown
+public enum DFError: Error {
     case unimplemented
-    case beanNotFound
+    case notFound
     case msg(String)
 }
 
 extension DFError: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .unknown:
-            return "unknown error"
         case .unimplemented:
             return "unimplemented error"
-        case .beanNotFound:
-            return "bean not found"
+        case .notFound:
+            return "not found"
         case .msg(let msg):
             return msg
         }

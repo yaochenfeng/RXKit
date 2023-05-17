@@ -10,16 +10,6 @@ enum RoutePage: String {
     case home
 }
 extension RoutePage: RXRouteConvertible {
-    init?(string: String) {
-        return nil
-    }
-    
-    var routeId: String {
-        if self == .home {
-            return ""
-        }
-        return rawValue
-    }
     
     func getController() -> UIViewController? {
         var controller: UIViewController?

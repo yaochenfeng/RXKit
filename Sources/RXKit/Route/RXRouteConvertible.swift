@@ -21,6 +21,16 @@ public protocol RXRouteConvertible {
     /// 导航到对应路由
     func navigate(animated: Bool, source: UIViewController?)
 }
+public extension RXRouteConvertible where Self: RawRepresentable, Self.RawValue == String {
+    /// 初始化
+    init?(string: String) {
+        self.init(rawValue: string)
+    }
+    /// 使用枚举值作为路由ID
+    var routeId: String {
+        return rawValue
+    }
+}
 public extension RXRouteConvertible {
     /// 通用导航控制器
     static func getNavigationController() -> UINavigationController {

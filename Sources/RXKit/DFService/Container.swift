@@ -17,9 +17,10 @@ public extension Container {
     func optional<T>(_ beanType: T.Type = T.self) -> T? {
         return resolve(beanType, name: nil, argument: ())
     }
-    func resolve<T>(_ beanType: T.Type = T.self) -> T {
+    /// 无参数解析
+    func resolve<T>(_ beanType: T.Type = T.self) throws -> T {
         guard let obj: T = optional() else {
-            fatalError(DFError.beanNotFound.description)
+            throw DFError.notFound
         }
         return obj
     }
