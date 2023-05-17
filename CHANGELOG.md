@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.20](https://github.com/yaochenfeng/RXKit/compare/v0.1.19...v0.1.20) (2023-05-17)
+
+
+### Bug Fixes
+
+* RXRouter ([a49ef17](https://github.com/yaochenfeng/RXKit/commit/a49ef17763dc612cc67e8e1d9ee554cfcfa26994))
+
 ## [0.1.19](https://github.com/yaochenfeng/RXKit/compare/v0.1.18...v0.1.19) (2023-05-17)
 
 
