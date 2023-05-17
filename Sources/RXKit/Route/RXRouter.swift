@@ -7,22 +7,27 @@
 
 #if canImport(UIKit)
 import UIKit
-
+/// 路由
 public class RXRouter {
+    /// 共享实例
     public static let shared = RXRouter()
+    /// 初始化
     public init() {}
     var items = [RXRouteConvertible.Type]()  
 }
 
 public extension RXRouter {
+    /// 添加
     func addRoute(_ item: RXRouteConvertible.Type) {
         items.append(item)
     }
+    /// 能否打开
     func canOpen(_ string: String) -> Bool {
         return items.contains { route in
             return route.init(string: string) != nil
         }
     }
+    /// 路由页面
     func open(_ string: String,
               animated: Bool = true,
               source: UIViewController? = nil) {
@@ -31,10 +36,11 @@ public extension RXRouter {
         }.first
         route?.navigate(animated: animated, source: source)
     }
-    
+    /// 能否打开
     func canOpen(_ url: URL) -> Bool {
         return canOpen(url.absoluteString)
     }
+    /// 路由页面
     func open(_ url: URL,
               animated: Bool = true,
               source: UIViewController? = nil) {

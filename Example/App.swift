@@ -28,7 +28,9 @@ struct MainApp: App {
         WindowGroup {
             RXPagePreview {
                 return MainAppWrapper.rootController()
-            }.edgesIgnoringSafeArea(.all)
+            }.edgesIgnoringSafeArea(.all).onOpenURL { url in
+                RXRouter.shared.open(url)
+            }
         }
     }
 }

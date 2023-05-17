@@ -28,6 +28,19 @@ extension AppDelegate: UIApplicationDelegate {
         return sceneConfig
     }
 }
+// 外部打开内容页面
+extension AppDelegate {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+                let url = userActivity.webpageURL else { return false }
+        RXRouter.shared.open(url)
+        return true
+    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        RXRouter.shared.open(url)
+        return true
+    }
+}
 extension UIWindow {
     static func configMain() -> UIWindow {
         var win: UIWindow
