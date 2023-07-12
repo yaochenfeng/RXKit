@@ -61,7 +61,7 @@ public extension Reactive where Base: UIView {
     }
     /// 根据视图找到对应的控制器
     var controller: UIViewController? {
-        for view in sequence(first: base.superview, next: { $0?.superview }) {
+        for view in sequence(first: base, next: { $0?.superview }) {
             if let responder = view?.next, responder.isKind(of: UIViewController.self) {
                 return responder as? UIViewController
             }
