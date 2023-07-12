@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.22](https://github.com/yaochenfeng/RXKit/compare/v0.1.21...v0.1.22) (2023-07-12)
+
+
+### Performance Improvements
+
+* Gemfile 版本固定 ([f39f162](https://github.com/yaochenfeng/RXKit/commit/f39f162ec1e2216cec2be0fb87e2c0b8bdcb8222))
+* 拓展SwiftUI 目录调整 ([8f1bdaa](https://github.com/yaochenfeng/RXKit/commit/8f1bdaacaad3e2c83918f7f70c82be918fda4fe0))
+
 ## [0.1.21](https://github.com/yaochenfeng/RXKit/compare/v0.1.20...v0.1.21) (2023-07-12)
 
 
