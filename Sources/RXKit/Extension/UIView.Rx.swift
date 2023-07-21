@@ -1,8 +1,8 @@
 //
-//  Rx+View.swift
-//  
+//  UIView.Rx.swift
+//  RXKit
 //
-//  Created by yaochenfeng on 2023/1/16.
+//  Created by yaochenfeng on 2023/7/13.
 //
 
 #if canImport(SnapKit)
